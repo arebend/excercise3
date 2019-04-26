@@ -26,7 +26,7 @@
       <br />
       <br />
       <div class="table-responsive">
-        <table class="table table-bordered" id="employee_table">
+        <table class="table table-bordered" id="planet_table">
           <tr>
             <th width="5%">No</th>
             <th width="15%">Name</th>
@@ -119,7 +119,7 @@
     });
 
     function search_table(value) {
-      $('#employee_table tr').each(function() {
+      $('#planet_table tr').each(function() {
         var found = 'false';
         $(this).each(function() {
           if ($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0) {
