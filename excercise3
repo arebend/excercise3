@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <body>
+    <br />
+    <br />
+    <div class="container" style="width:900px;">
+      <h3 align="center">Planet Lists</h3>
+      <br />
+      <br />
+      <div align="center">
+        <input type="text" name="search" id="search" class="form-control" placeholder="Search" />
+      </div>
+      <br />
+      <br />
+      <div class="table-responsive">
+        <table class="table table-bordered" id="employee_table">
+          <tr>
+            <th width="5%">No</th>
+            <th width="15%">Name</th>
+            <th width="25%">Rotation Period</th>
+            <th width="10%">Orbital Period</th>
+            <th width="20%">Climate</th>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>Alderaan</td>
+            <td>24</td>
+            <td>364</td>
+            <td>temperate</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Yavin IV</td>
+            <td>24</td>
+            <td>4818</td>
+            <td>temperate, tropical</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Hoth</td>
+            <td>23</td>
+            <td>549</td>
+            <td>frozen</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Dagobah</td>
+            <td>23</td>
+            <td>549</td>
+            <td>murky</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Bespin</td>
+            <td>12</td>
+            <td>5110</td>
+            <td>temperate</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Endor</td>
+            <td>18</td>
+            <td>402</td>
+            <td>temperate</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Naboo</td>
+            <td>26</td>
+            <td>312</td>
+            <td>temperate</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Coruscant</td>
+            <td>24</td>
+            <td>368</td>
+            <td>temperate</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Kamino</td>
+            <td>27</td>
+            <td>463</td>
+            <td>temperate</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Geonosis</td>
+            <td>30</td>
+            <td>256</td>
+            <td>temperate, arid</td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+  </body>
+
+</html>
+<script>
+  $(document).ready(function() {
+    $('#search').keyup(function() {
+      search_table($(this).val());
+    });
+
+    function search_table(value) {
+      $('#employee_table tr').each(function() {
+        var found = 'false';
+        $(this).each(function() {
+          if ($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0) {
+            found = 'true';
+          }
+        });
+        if (found == 'true') {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    }
+  });
+</script>
+</body>
+
+</html>
